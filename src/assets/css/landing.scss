@@ -1,0 +1,157 @@
+// ---path before hover
+//  clip-path: path("M154.5,88.5 C131,113.5 62.5,110 30,89.5 C-2.5,69 -3.5,42 4.5,25.5 C12.5,9 33.5,-6 85,3.5 C136.5,13 178,63.5 154.5,88.5 Z");
+// ---path after hover
+// clip-path: path("M143,77 C117,96 74,100.5 45.5,91.5 C17,82.5 -10.5,57 5.5,31.5 C21.5,6 79,-5.5 130.5,4 C182,13.5 169,58 143,77 Z");
+@import url("https://fonts.cdnfonts.com/css/andale-mono");
+@import url("https://fonts.cdnfonts.com/css/noir-et-blanc");
+@import url("https://fonts.cdnfonts.com/css/nulshock");
+.landing {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../wallpapers/183.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  overflow: hidden;
+
+  .header {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    &__wrap {
+      padding: 10px;
+      display: flex;
+      width: 60vw;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &__left {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      & li {
+        font-size: 18px;
+        font-weight: 700;
+      }
+    }
+  }
+  .socials {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 3;
+  }
+  .scrollDown {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 3rem;
+    &__wheel {
+      height: 42px;
+      width: 24px;
+      border-radius: 10px;
+      border: 2px solid #fff;
+      &--inner {
+        position: absolute;
+        left: 10px;
+        margin-top: 5px;
+        width: 4px;
+        height: 4px;
+        background: #fff;
+        border-radius: 50%;
+        animation: moovingWheel 0.5s linear infinite;
+        @keyframes moovingWheel {
+          0% {
+            top: 1px;
+          }
+          25% {
+            top: 2px;
+          }
+          50% {
+            top: 3px;
+          }
+          75% {
+            top: 2px;
+          }
+          100% {
+            top: 1px;
+          }
+        }
+      }
+    }
+    &__arrows {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .scrollDown__arrow {
+        width: 15px;
+        height: 15px;
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        transform: rotate(45deg);
+        animation: scroll-anim 1s infinite;
+        animation-direction: alternate;
+        &:nth-child(1) {
+          animation-delay: 0.1s;
+        }
+        &:nth-child(2) {
+          animation-delay: 0.2s;
+        }
+        &:nth-child(3) {
+          animation-delay: 0.3s;
+        }
+        @keyframes scroll-anim {
+          0% {
+            opacity: 0;
+          }
+          50% {
+            opacity: 0.5;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  .intro {
+    position: absolute;
+    top: 20%;
+    left: 1rem;
+    width: 100%;
+    height: 60%;
+    z-index: 2;
+    color: #fff;
+    // font-family: "Nulshock", sans-serif;
+    // font-family: "Noir-et-Blanc", sans-serif;
+    font-family: "Andale Mono", sans-serif;
+
+    & h4 {
+      font-size: 33px;
+    }
+    & h1 {
+      font-size: 35px;
+      width: 93%;
+      padding-top: 1rem;
+    }
+    @media (min-width: 600px) {
+      & {
+        left: 5%;
+      }
+      & h4 {
+        font-size: 37px;
+      }
+      & h1 {
+        font-size: 45px;
+      }
+    }
+  }
+}

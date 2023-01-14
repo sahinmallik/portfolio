@@ -1,0 +1,44 @@
+@import "./base.scss";
+.skills {
+  position: relative;
+  font-size: 35px;
+  height: 300px;
+  background-color: $yellow-color;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 1rem;
+  &__header {
+    font-weight: 600;
+  }
+  &__text {
+    position: absolute;
+    white-space: nowrap;
+    // font-family: "cascadia", sans-serif;
+    &--left {
+      left: 0;
+      top: 6rem;
+      animation: movingLeft 10s linear infinite;
+      @keyframes movingLeft {
+        0% {
+          transform: translate3d(0, 0, 0);
+        }
+        100% {
+          transform: translate3d(-50%, 0, 0);
+        }
+      }
+    }
+    &--right {
+      right: 0;
+      top: 11rem;
+      animation: movingRight 10s linear infinite;
+      @keyframes movingRight {
+        0% {
+          transform: translate3d(0, 0, 0);
+        }
+        100% {
+          transform: translate3d(50%, 0, 0);
+        }
+      }
+    }
+  }
+}
